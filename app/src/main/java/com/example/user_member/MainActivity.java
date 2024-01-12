@@ -15,14 +15,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        // Intent orqali User obyekti olish
-//        Intent intent = getIntent();
-//        Member member = (Member) intent.getSerializableExtra("memberObject");
-//        // TextView ga ma'lumotni joylash
-//        TextView infoTV = findViewById(R.id.textV);
-//        String memInfo = "Member: "+member.getUsername()+ ", e-mail: "+member.getEmail();
-//        infoTV.setText(memInfo);
-
         user = new User("Odinayev", 43);
         Button okB = findViewById(R.id.okButton);
         okB.setOnClickListener(view -> {
@@ -36,10 +28,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         setContentView(R.layout.activity_main);
-        // Intent orqali User obyekti olish
         Intent intent = getIntent();
         Member member = (Member) intent.getSerializableExtra("memberObject");
-        // TextView ga ma'lumotni joylash
         TextView infoTV = findViewById(R.id.textV);
         String memInfo = "Member: "+member.getUsername()+ ", e-mail: "+member.getEmail();
         infoTV.setText(memInfo);;
